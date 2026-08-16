@@ -36,6 +36,11 @@ in this Software without prior written authorization from The Open Group.
 
 #include <X11/extensions/Xext.h>
 
+#include <X11/Xfuncproto.h>
+#ifndef _X_UNUSED  /* defined in Xfuncproto.h in xproto >= 7.0.22 */
+#define _X_UNUSED  /* */
+#endif
+
 /*
  * We need to keep a list of open displays since the Xlib display list isn't
  * public.  We also have to per-display info in a separate block since it isn't
@@ -166,7 +171,7 @@ XExtDisplayInfo *proc (Display *dpy) \
 	XExtDisplayInfo *proc(Display *dpy)
 
 #define XEXT_GENERATE_CLOSE_DISPLAY(proc,extinfo) \
-int proc (Display *dpy, XExtCodes *codes) \
+int proc (Display *dpy, _X_UNUSED XExtCodes *codes) \
 { \
     return XextRemoveDisplay (extinfo, dpy); \
 }
