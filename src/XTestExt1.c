@@ -1256,7 +1256,7 @@ int	ack_flag)
  */
 static	Bool
 XTestIdentifyMyEvent(
-Display	*display,
+_X_UNUSED Display	*display,
 /*
  * Holds the event that this routine is supposed to look at.
  */
@@ -1264,7 +1264,7 @@ XEvent	*event_ptr,
 /*
  * this points to any user-specified arguments (ignored)
  */
-char	*args)
+_X_UNUSED char	*args)
 {
 	/*
 	 * if the event if of the correct type, return the Bool True,

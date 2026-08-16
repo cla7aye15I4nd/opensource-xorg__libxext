@@ -164,7 +164,7 @@ cleanup:
 
 /* Return 1 if XGE extension exists, 0 otherwise. */
 static Bool
-_xgeCheckExtension(Display* dpy, XExtDisplayInfo* info)
+_xgeCheckExtension(_X_UNUSED Display* dpy, XExtDisplayInfo* info)
 {
     return XextHasExtension(info);
 }
@@ -173,8 +173,8 @@ _xgeCheckExtension(Display* dpy, XExtDisplayInfo* info)
 /* Retrieve XGE version number from server. */
 static XGEVersionRec*
 _xgeGetExtensionVersion(Display* dpy,
-                            _Xconst char* name,
-                            XExtDisplayInfo*info)
+                        _X_UNUSED _Xconst char* name,
+                        XExtDisplayInfo* info)
 {
     xGEQueryVersionReply rep;
     xGEQueryVersionReq *req;
@@ -204,7 +204,7 @@ _xgeGetExtensionVersion(Display* dpy,
  */
 
 static int
-_xgeDpyClose(Display* dpy, XExtCodes* codes)
+_xgeDpyClose(Display* dpy, _X_UNUSED XExtCodes* codes)
 {
     XExtDisplayInfo *info = _xgeFindDisplay(dpy);
 

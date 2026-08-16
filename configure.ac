@@ -42,7 +42,7 @@ fi
 AC_SUBST(XEXT_SOREV)
 
 # Obtain compiler/linker options for dependencies
-PKG_CHECK_MODULES(XEXT, [xproto >= 7.0.13] [x11 >= 1.6] [xextproto >= 7.1.99])
+PKG_CHECK_MODULES(XEXT, [xproto >= 7.0.22] [x11 >= 1.6] [xextproto >= 7.1.99])
 
 AX_GCC_BUILTIN([__builtin_popcountl])
 AC_REPLACE_FUNCS([reallocarray])

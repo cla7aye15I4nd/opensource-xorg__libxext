@@ -333,8 +333,16 @@ XagQueryApplicationGroup(
 
 }
 
+/* Mark parameters as used only on WIN32 builds */
+#ifdef WIN32
+#define WINUSED /* */
+#else
+#define WINUSED _X_UNUSED
+#endif
+
 Bool
-XagCreateAssociation(Display* dpy, Window* window_return, void* system_window)
+XagCreateAssociation(WINUSED Display* dpy,
+                     Window* window_return, void* system_window)
 {
 #ifdef WIN32
     long tmp = (long)(uintptr_t)(*(HWND*) system_window);
@@ -367,7 +375,7 @@ XagCreateAssociation(Display* dpy, Window* window_return, void* system_window)
 }
 
 Bool
-XagDestroyAssociation(Display* dpy, Window window)
+XagDestroyAssociation(WINUSED Display* dpy, WINUSED Window window)
 {
 #ifdef WIN32
     XExtDisplayInfo *info = find_display (dpy);
