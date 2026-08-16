@@ -128,6 +128,10 @@ Status XeviGetVisualInfo(
     }
     if (!n_visual || !visual) {		/* copy the all visual */
 	temp_visual = Xcalloc(sz_info, sz_VisualID32);
+	if (temp_visual == NULL) {
+	    XFree(vinfo);
+	    return BadAlloc;
+	}
     	n_visual = 0;
         for (vinfoIndex = 0; vinfoIndex < sz_info; vinfoIndex++)
 	    if (notInList(temp_visual, n_visual, vinfo[vinfoIndex].visualid))
@@ -148,6 +152,10 @@ Status XeviGetVisualInfo(
 	    }
 	}
 	temp_visual = Xmallocarray(n_visual, sz_VisualID32);
+	if (temp_visual == NULL) {
+	    XFree(vinfo);
+	    return BadAlloc;
+	}
         for (visualIndex = 0; visualIndex < n_visual; visualIndex++)
 	    temp_visual[visualIndex] = visual[visualIndex];
     }
