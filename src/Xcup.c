@@ -37,6 +37,7 @@ in this Software without prior written authorization from The Open Group.
 #include <X11/extensions/Xext.h>
 #include <X11/extensions/extutil.h>
 #include <limits.h>
+#include "reallocarray.h"
 
 static XExtensionInfo _xcup_info_data;
 static XExtensionInfo *xcup_info = &_xcup_info_data;
@@ -228,7 +229,7 @@ XcupStoreColors(
 	    nbytes = nentries * SIZEOF (xColorItem);
 
 	    if (ncolors > 256)
-		rbufp = Xmalloc (nbytes);
+		rbufp = Xmallocarray(nentries, SIZEOF (xColorItem));
 	    else
 		rbufp = rbuf;
 	} else
