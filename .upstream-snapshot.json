@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "target": "cla7aye15I4nd/opensource-xorg__libxext",
+  "canonical_upstream": "https://gitlab.freedesktop.org/xorg/lib/libxext",
+  "source": {
+    "kind": "git",
+    "upstream_url": "https://gitlab.freedesktop.org/xorg/lib/libxext.git",
+    "branch": "master",
+    "revision": "508f8adca2540ff8926ac8456cb1c553a8caae76"
+  },
+  "publication_review": {
+    "license_files": [
+      "COPYING"
+    ],
+    "notice_files": [
+      "AUTHORS"
+    ],
+    "public_fixture_key_markers": []
+  },
+  "upstream_tree_sha256": "d3c279c5981fe707a782bf5c9796b19a9fd583d59b6ff72532ee8523021fa2e7",
+  "tree_sha256": "66a96ade9aaee3d54b51b25937410bd737885ed53c6d8ec7fb6e2c05d822111c"
+}
